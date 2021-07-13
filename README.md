@@ -7,11 +7,17 @@
 https://github.com/jackvote/price_feed
 
 Работа скрипта не требует докера и не предоставляет трудности.
+
 Запускается в фоне:
+
 screen -S feed
+
 cd /home/js/feed
+
 node setfeed.js
+
 Ctrl-A, D
+
 Проверка, как идёт работа:
 screen -x feed
 
