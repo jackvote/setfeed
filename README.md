@@ -38,5 +38,5 @@ sudo apt-get -y install nodejs
 
 ## Docker run:
 ```
-docker run -d -e NODE=wss://api.golos.id/ws -e WITNESS=avral -e KEY=5Ht... setfeed
+docker run -d -e NODE=wss://api.golos.id/ws -e WITNESS=avral -e KEY=5Ht... avral/golosfeeds
 ```
