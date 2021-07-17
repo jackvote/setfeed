@@ -1,15 +1,13 @@
 // --------- Настройки программы -----------------
-
 // необходимые библиотеки устанавливаются через npm
 const golos = require("golos-classic-js")
 const request = require("request")
-//const GOLOSNODE = "wss://golos.lexai.host/ws" // public node
-const GOLOSNODE = "ws://192.168.1.210:8091" // local node
+
+const GOLOSNODE = process.env.NODE || "ws://192.168.1.210:8091" // local node
+const from = process.env.WITNESS || "jackvote" // delegate
+const key = process.env.KEY || "5Qm..."    // wif
+
 golos.config.set('websocket', GOLOSNODE)
-
-const from = "jackvote" // delegate
-const key = "5Qm..."    // wif
-
 
 function getUrl() {
     request("https://expertgroup.org/get_feed.php", async function (err, res) {
