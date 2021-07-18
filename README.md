@@ -35,3 +35,8 @@ curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 После добавления репозитория перейдите к установке Node.js и NPM. !!!
 
 sudo apt-get -y install nodejs
+
+## Docker run:
+```
+docker run -d -e NODE=wss://api.golos.id/ws -e WITNESS=avral -e KEY=5Ht... avral/golosfeeds
+```

@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "golos-classic-js": "^0.8.3",
+    "request": "^2.88.2"
+  }
+}
