@@ -41,3 +41,4 @@ sudo apt-get -y install nodejs
 docker run -d -e NODE=wss://api.golos.id/ws -e WITNESS=avral -e KEY=5Ht... avral/golosfeeds
 ```
 Но для этого, вначале, требуется установить сам докер. :-)
+Делегатам же, которые запускают ноду в докере, а не собирают самостоятельно, этого уже делать не придётся.
