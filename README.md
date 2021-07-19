@@ -35,10 +35,28 @@ sudo apt-get -y install nodejs
 ```
 Возможен быстрый запуск скрипта в контейнере, благодаря созданному @avral образу.
 В параметрах запуска передаётся адрес паблик-ноды, ник делегата и его активный ключ.
+Также имеет смысл указать имя контенера.
 
 ## Docker run:
 ```
-docker run -d -e NODE=wss://api.golos.id/ws -e WITNESS=avral -e KEY=5Ht... avral/golosfeeds
+sudo docker run -d -e NODE=wss://api.golos.id/ws -e WITNESS=avral -e KEY=5Ht... --name setfeed avral/golosfeeds
 ```
 Но для этого, вначале, требуется установить сам докер. :-)
 Делегатам же, которые запускают ноду в докере, а не собирают самостоятельно, этого уже делать не придётся.
+
+Чтобы посмотреть результат работы скрипта в контейнере используйте команду:
+```
+sudo docker logs --tail=200 -f setfeed
+```
+Должен быть показан такой результат:
+```
+server@node:~$ sudo docker logs --tail=200 -f setfeed
+{
+  GOLOS: 0.14162937927317,
+  GOLD: 4.34452,
+  DATEG: '17/07/2021',
+  FEED: 0.033
+}
+Ok
+Опубликовали { base: '0.033 GBG', quote: '1.000 GOLOS' }
+```
