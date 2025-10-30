@@ -15,7 +15,7 @@ function getUrl() {
         try {
             let obj=JSON.parse(res.body)
             console.log(obj)
-            let exchange_rate=JSON.parse('{"base":"'+obj.FEED+' GBG","quote":"1.000 GOLOS"}')
+            let exchange_rate=JSON.parse('{"base":"'+obj.FEED.toFixed(3)+' GBG","quote":"1.000 GOLOS"}')
             console.log("Ok")
             feed(exchange_rate)
         } catch(e) {
